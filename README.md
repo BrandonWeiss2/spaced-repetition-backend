@@ -50,3 +50,5 @@ Run the tests mode `npm test`
 Run the migrations up `npm run migrate`
 
 Run the migrations down `npm run migrate -- 0`
+
+Seeding Database `psql -U postgres -d spaced-repetition-test -f C:/Users/Brandon/projects/spaced-repetition-capstone/backend/seeds/seed.tables.sql` 
