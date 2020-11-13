@@ -49,7 +49,6 @@ languageRouter
   .get('/head', async (req, res, next) => {
     try {
       let head = await LanguageService.getHead(req.app.get('db'), req.language.user_id)
-      console.log(head)
       head = LanguageService.serializeWord(head)
       res.json(head)
       next()
