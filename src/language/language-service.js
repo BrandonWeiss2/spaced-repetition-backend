@@ -68,8 +68,8 @@ const LanguageService = {
   serializeGuessResponse(linkedList, updatedNodes, response, score) {
     return {
       nextWord: linkedList.head.value.original,
-      wordCorrectCount: linkedList.head.value.correct_count,
-      wordIncorrectCount: linkedList.head.value.incorrect_count,
+      wordCorrectCount: updatedNodes[0].correct_count,
+      wordIncorrectCount: updatedNodes[0].incorrect_count,
       totalScore: score,
       answer: updatedNodes[0].translation,
       isCorrect: response
