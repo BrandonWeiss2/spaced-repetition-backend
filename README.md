@@ -1,54 +1,13 @@
-# Spaced repetition API!
+Welcome To Spaced Repetition!
 
-## Local dev setup
+https://spaced-repetition-frontend.vercel.app/register
 
-If using user `dunder-mifflin`:
+Summary: We made learning a new language as easy as possible using an advanced learning strategy called spaced repetition. We have created an app that will allow you to use flashcards to memorize vocab, but we have used an advanced algorithm to determine what flashcard you will see next. The more often you get a word right, the less often you will see the flashcard. The more often you get a word wrong, the more often you will see that flashcard. Using this technique, I'm sure you will be speaking a second or even third language in no time.
 
-```bash
-mv example.env .env
-createdb -U dunder-mifflin spaced-repetition
-createdb -U dunder-mifflin spaced-repetition-test
-```
+Client Repo: https://github.com/BrandonWeiss2/spaced-repetition-frontend Server Repo: https://github.com/BrandonWeiss2/spaced-repetition-backend
 
-If your `dunder-mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+TECHNOLOGY: Back End - Node and Express - Authentication via JWT - RESTful Api
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate
-```
+Database - Postgres - Knex.js -SQL wrapper
 
-And `npm test` should work at this point
-
-## Configuring Postgres
-
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
-
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-   3. E.g  on Ubuntu 18.04 probably: '/etc/postgresql/10/main/postgresql.conf'
-2. Find the `timezone` line and set it to `UTC`:
-
-```conf
-# - Locale and Formatting -
-
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
-
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests mode `npm test`
-
-Run the migrations up `npm run migrate`
-
-Run the migrations down `npm run migrate -- 0`
-
-Seeding Database `psql -U postgres -d spaced-repetition-test -f C:/Users/Brandon/projects/spaced-repetition-capstone/backend/seeds/seed.tables.sql` 
+Production - Deployed via Heroku
